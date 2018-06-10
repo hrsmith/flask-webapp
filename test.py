@@ -14,6 +14,10 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 def hello_world():
    return render_template('index.html')
 
+@app.route('/login')
+def loginAction():
+    return render_template('login.html')
+
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     file_dir=os.path.join(basedir,app.config['UPLOAD_FOLDER'])
